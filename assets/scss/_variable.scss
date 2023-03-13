@@ -1,0 +1,27 @@
+$white: #ffffff;
+$black: #000000;
+$green: #105652;
+$orange: #E7680E;
+$cream: #EFEAD8;
+$grey: #3C4048;
+
+@font-face {
+    font-family: 'SF Pro Text';
+    src: url('../fonts/SFProText-Regular.woff2') format('woff2'),
+        url('../fonts/SFProText-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Allenoire Free Personal';
+    src: url('../fonts/AllenoireFreePersonal-Regular.woff2') format('woff2'),
+        url('../fonts/AllenoireFreePersonal-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+$main: 'SF Pro Text';
+$secondary: 'Allenoire Free Personal';
