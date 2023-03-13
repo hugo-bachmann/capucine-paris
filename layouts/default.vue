@@ -7,8 +7,8 @@
 
                 const burger = document.querySelector ('.burger')
                 burger.classList.toggle ('active')
-            }
-        }
+            },
+        },
     }
 </script>
 
@@ -23,7 +23,7 @@
                     <a href="/">Notre histoire</a>
                 </li>
                 <li>
-                    <a href="/">Gallerie</a>
+                    <a href="/">Galerie</a>
                 </li>
                 <li>
                     <a href="/">Services</a>

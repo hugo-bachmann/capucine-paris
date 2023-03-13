@@ -26,14 +26,77 @@
         </div>
     </section>
     
-    <section id="gallerie">
+    <section id="galerie">
         <div class="slider">
-
+            <swiper
+            :slides-per-view="1"
+            :space-between="0"
+            @swiper="onSwiper"
+            @slideChange="onSlideChange"
+            
+        >
+            <swiper-slide>
+                <div class="imgSlide slide_1"></div>
+            </swiper-slide>
+            <swiper-slide>
+                <div class="imgSlide slide_2"></div>
+            </swiper-slide>
+            <swiper-slide>
+                <div class="imgSlide slide_3"></div>
+            </swiper-slide>
+            <swiper-slide>
+                <div class="imgSlide slide_4"></div>
+            </swiper-slide>
+        </swiper>
         </div>
         <div class="content">
-            <h2>Gallerie</h2>
-            <p>Nous travaillons avec des <strong>modeles</strong> de tous types et de tous âges.Que vous cherchiez des mannequins pour des <strong>defiles de mode</strong>, des séances photos, des publicités, des vidéos ou des <strong>événements spéciaux</strong>, nous avons les meilleurs talents pour vous aider à atteindre vos objectifs.</p>
-            <p>Nous nous engageons à aider nos mannequins à se <strong>developper dans leur carriere</strong>, en leur offrant une formation et des conseils personnalisés pour améliorer leur <strong>technique</strong> de marche, leur posture, leur expression faciale, leur pose et leur style.</p>
+            <h2>Galerie</h2>
+            <p>Nous travaillons avec des <strong>modeles</strong> de tous types et de tous âges.Que vous cherchiez des mannequins pour des <strong>defiles de mode</strong>, des séances photos, des publicités, des vidéos ou des <strong>evenements spéciaux</strong>, nous avons les meilleurs talents pour vous aider à atteindre vos objectifs.</p>
+            <p class="last-child">Nous nous engageons à aider nos mannequins à se <strong>developper dans leur carriere</strong>, en leur offrant une formation et des conseils personnalisés pour améliorer leur <strong>technique</strong> de marche, leur posture, leur expression faciale, leur pose et leur style.</p>
+            <a class="btn green" href="">Visitez</a>
+        </div>
+    </section>
+
+    <section id="services">
+        <div class="content">
+            <h3>Nos services</h3>
+            <p>
+                Si vous cherchez à devenir mannequin ou à travailler avec les meilleurs <strong>talents de Paris</strong>, notre agence de mannequin est l'endroit idéal pour commencer. <strong>Contactez-nous</strong> dès maintenant pour en savoir plus sur nos services et pour commencer votre voyage dans l'industrie de la mode.
+            </p>
+            <a href="">Visitez</a>
+        </div>
+        <div class="services">
+
         </div>
     </section>
 </template>
+
+<script>
+
+    import { Pagination } from 'swiper';
+    // Import Swiper Vue.js components
+    import { Swiper, SwiperSlide } from 'swiper/vue';
+    // Import Swiper styles
+    import 'swiper/css';
+    import 'swiper/css/pagination';
+
+    export default {
+        components: {
+            Swiper,
+            SwiperSlide,
+        },
+        setup() {
+            const onSwiper = (swiper) => {
+            console.log(swiper);
+            };
+            const onSlideChange = () => {
+            console.log('slide change');
+            };
+            return {
+            onSwiper,
+            onSlideChange,
+            modules: [Pagination],
+            };
+        },
+    };
+</script>
