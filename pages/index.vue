@@ -31,9 +31,8 @@
             <swiper
             :slides-per-view="1"
             :space-between="0"
-            @swiper="onSwiper"
-            @slideChange="onSlideChange"
-            
+            :pagination="true"
+            :modules="modules"
         >
             <swiper-slide>
                 <div class="imgSlide slide_1"></div>
@@ -59,26 +58,94 @@
 
     <section id="services">
         <div class="content">
-            <h3>Nos services</h3>
+            <h3>Nos Services</h3>
             <p>
                 Si vous cherchez à devenir mannequin ou à travailler avec les meilleurs <strong>talents de Paris</strong>, notre agence de mannequin est l'endroit idéal pour commencer. <strong>Contactez-nous</strong> dès maintenant pour en savoir plus sur nos services et pour commencer votre voyage dans l'industrie de la mode.
             </p>
-            <a href="">Visitez</a>
+            <a class="btn green" href="">Visitez</a>
         </div>
         <div class="services">
+            <swiper
+            :slides-per-view="3"
+            :space-between="0"
+            :loop="true"
+            :modules="modules"
+            >
+                <swiper-slide>
+                    <div class="service green">
+                        <!-- <span>Text on path</span> -->
+                        <h4>PHOTOGRAPHIE</h4>
+                        <a class="btn" href="">Visitez</a>
+                    </div>
+                </swiper-slide>
+                <swiper-slide>
+                    <div class="service orange">
+                        <!-- <span>Text on path</span> -->
+                        <h4>PHOTOGRAPHIE</h4>
+                        <a class="btn" href="">Visitez</a>
+                    </div>
+                </swiper-slide>
+                <swiper-slide>
+                    <div class="service grey">
+                        <!-- <span>Text on path</span> -->
+                        <h4>PHOTOGRAPHIE</h4>
+                        <a class="btn" href="">Visitez</a>
+                    </div> 
+                </swiper-slide>
+            </swiper>
+        </div>  
+    </section>
 
+    <section id="contact">
+        <div class="form">
+            <h3>Nous rejoindre</h3>
+            <form action="">
+                <div class="dual">
+                    <div class="inputContainer">
+                        <label for="prenom">Prenom</label>
+                        <input type="text" id="prenom" name="prenom" placeholder="Mathilde">
+                    </div>
+                    <div class="inputContainer">
+                        <label for="nom">Nom</label>
+                        <input type="text" id="nom" name="nom" placeholder="Jaus">
+                    </div>
+                </div>
+                <div class="inputContainer">
+                    <label for="email">Adresse Mail</label>
+                    <input type="text" id="email" name="email" placeholder="mathildejaus@gmail.com">
+                </div>
+                <div class="inputContainer">
+                    <label for="telephone">Numero de Telephone</label>
+                    <input type="tel" id="telephone" name="telephone" placeholder="+33 6 XX XX XX XX">
+                </div>
+                <div class="inputContainer">
+                    <label for="objet">Objet</label>
+                    <input type="text" id="objet" name="objet" placeholder="Candidature Mlle Jaus">
+                </div>
+                <button class="btn" type="submit">Etre contacte</button>
+            </form>
+        </div>
+        <div class="imgContainer">
+
+        </div>
+        <div class="contact">
+            <h3>Nous contacter</h3>
+            <p>Capucine Paris</p>
+            <p>16 Rue de la Pompe, 75016 Paris, France</p>
+            <p>+33 1 45 24 78 90</p>
+            <p>contact@parischicmodels.com</p>
         </div>
     </section>
 </template>
 
 <script>
-
-    import { Pagination } from 'swiper';
-    // Import Swiper Vue.js components
     import { Swiper, SwiperSlide } from 'swiper/vue';
     // Import Swiper styles
     import 'swiper/css';
     import 'swiper/css/pagination';
+
+    import { Pagination } from 'swiper';
+
 
     export default {
         components: {
@@ -86,16 +153,11 @@
             SwiperSlide,
         },
         setup() {
-            const onSwiper = (swiper) => {
-            console.log(swiper);
-            };
-            const onSlideChange = () => {
-            console.log('slide change');
-            };
             return {
-            onSwiper,
-            onSlideChange,
-            modules: [Pagination],
+                pagination: {
+                    clickable: true,
+                },
+                modules: [Pagination],
             };
         },
     };

@@ -44,7 +44,4 @@
         <slot />
     </main>
 
-    <footer>
-        footer ici
-    </footer>
 </template>

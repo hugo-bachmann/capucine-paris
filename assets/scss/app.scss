@@ -17,8 +17,12 @@ a, div, button{
     }
 }
 
-h1, p{
+h1, h3, h4, p{
     margin: 0;
+}
+
+button{
+    background: none;
 }
 
 p{
@@ -280,6 +284,12 @@ ul{
     background-color: $cream;
     padding-bottom: 3rem;
     .slider{
+        .swiper{
+            max-height: 500px;
+        }
+        .swiper-pagination{
+            display: none;
+        }
         .imgSlide{
             height: 100vh;
             width: 100%;
@@ -311,11 +321,166 @@ ul{
     }
 }
 
+#services{
+    background-color: $cream;
+    padding: 2rem 0rem;
+    .content{
+        text-align: center;
+        padding: 0 2rem;
+        h3{
+            color: $green;
+            font-family: $secondary;
+            font-size: 2rem;
+            margin-bottom: 2rem;
+        }
+        p{
+            margin-bottom: 3rem;
+        }
+    }
+    .services{
+        margin-top: 4rem;
+        .service{
+            height: 380px;
+            width: 250px;
+            border-radius: 130px;
+            position: relative;
+            margin-left: auto;
+            margin-right: auto;
+            h4{
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                color: $white;
+                font-family: $secondary;
+                font-size: 1.4rem;
+                text-transform: uppercase;
+                max-width: 225px;
+                letter-spacing: 3px;
+            }
+            .btn{
+                position: absolute;
+                bottom: 50px;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+            &.green{
+                background-color: $green;
+            }
+            &.orange{
+                background-color: $orange;
+            }
+            &.grey{
+                background-color: $grey;
+            }
+        }
+    }
+}
+
+#contact{
+    background-color: $green;
+    padding: 4rem 0;
+    .form{
+        padding: 0 2rem;
+        margin-bottom: 2rem;
+        h3{
+            font-size: 1.75rem;
+            color: $white;
+            font-family: $secondary;
+            letter-spacing: 3px;
+            margin-bottom: 2rem;
+        }
+        .dual{
+            display: flex;
+            justify-content: space-between;
+            .inputContainer{
+                width: 45%;
+            }
+        }
+        .inputContainer{
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: start;
+            label {
+                color: $white;
+                font-family: $secondary;
+                font-size: 1rem;
+                margin-bottom: 10px;
+            }
+            input{
+                width: 100%;
+                background: transparent;
+                border: none;
+                border-bottom: 3px solid $white;
+                padding-bottom: 5px;
+                font-size: 1.25rem;
+                margin-bottom: 25px;
+            }
+            input::placeholder{
+                color: $white;
+                font-family: $secondary;
+                font-size: 1.25rem;
+            }
+        }
+        button{
+            margin-top: 1rem;
+        }
+    }
+    .imgContainer{
+        height: 500px;
+        background-image: url('../../public/img/contact.png');
+        background-position: center center;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+    .contact{
+        margin-top: 2rem;
+        padding: 0 2rem;
+        h3{
+            font-size: 1.75rem;
+            color: $white;
+            font-family: $secondary;
+            letter-spacing: 3px;
+            margin-bottom: 2rem;
+        }
+        p{
+            font-family: $secondary;
+            color: $white;
+        }
+    }
+}
+
 @media screen and (min-width: 1024px){
     #galerie{
         display: flex;
         .slider{
             width: 50%;
+            .swiper{
+                max-height: inherit;
+            }
+            .swiper-pagination{
+                display: flex;
+                flex-direction: column;
+                align-items: flex-end;
+                justify-content: center;
+                position: absolute;
+                width: 50px;
+                top: 50%;
+                left: 86%;
+                transform: translateY(-50%);
+                .swiper-pagination-bullet{
+                    height: 24px;
+                    width: 24px;
+                    border: 1px solid $white;
+                    margin: 8px 0;
+                    background: transparent;
+                    opacity: 1;
+                }
+                .swiper-pagination-bullet-active{
+                    background-color: $white;
+                }
+            }
         }
         .content{
             text-align: left;
@@ -480,6 +645,82 @@ ul{
                 &.last-child{
                     margin-bottom: 8.4rem;
                 }
+            }
+        }
+    }
+    #services{
+        display: flex;
+        align-items: center;
+        min-height: 100vh;
+        .content{
+            position: relative;
+            text-align: left;
+            padding-left: 12rem;
+            padding-right: 12rem;
+            &::after{
+                content: '03';
+                position: absolute;
+                left: 12rem;
+                top: -12rem;
+                font-family: $secondary;
+                font-size: 5.5rem;
+                color: $grey;
+            }
+            h3{
+                font-size: 4.75rem;
+                margin-bottom: 33px;
+                margin-top: -50px;
+            }
+            p{
+                margin-bottom: 5rem;
+            }
+        }
+        .services{
+            width: 50%;
+            margin-top: -1rem;
+            .service{
+                width: 350px;
+                height: 573px;
+                border-radius: 180px;
+            }
+            .swiper{
+                padding-right: 20rem;
+            }
+        }
+    }
+    #contact{
+        display: flex;
+        min-height: 100vh;
+        padding-left: 10.5rem;
+        padding-top: 0rem;
+        padding-bottom: 0rem;
+        .form{
+            margin-top: 12rem;
+            h3{
+                font-size: 4rem;
+                margin-bottom: 3rem;
+            }
+            form{
+                max-width: 75%;
+            }
+            .inputContainer{
+                input{
+                    margin-bottom: 60px;
+                }
+            }
+        }
+        .imgContainer{
+            width: 470px;
+            height: 100vh;
+        }
+        .contact{
+            margin-top: 12rem;
+            h3{
+                font-size: 4rem;
+                margin-bottom: 5.5rem;
+            }
+            p{
+                margin-bottom: 3rem;
             }
         }
     }
