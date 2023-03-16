@@ -1,12 +1,12 @@
 <template>
-    <section id="accueil" class="container">
+    <section id="accueil" class="container section">
         <h1>Grapucine</h1>
         <p>paris</p>
         <a class="btn" href="/#contact">Visitez</a>
         <span class="modelName">Model : Abir Hamdi</span>
     </section>
 
-    <section id="notre-histoire">
+    <section id="notre-histoire" class="section">
         <div class="imgContainer left">
             <img src="../public/img/stepan-kulyk.png" alt="Stepan Kulyk">
             <span class="modelName">Photo : Stepan Kulyk</span>
@@ -26,7 +26,7 @@
         </div>
     </section>
     
-    <section id="galerie">
+    <section id="galerie" class="section">
         <div class="slider">
             <swiper
             :slides-per-view="1"
@@ -56,7 +56,7 @@
         </div>
     </section>
 
-    <section id="services">
+    <section id="services" class="section">
         <div class="content">
             <h3>Nos Services</h3>
             <p>
@@ -96,7 +96,7 @@
         </div>  
     </section>
 
-    <section id="contact">
+    <section id="contact" class="section">
         <div class="form">
             <h3>Nous rejoindre</h3>
             <form action="">
@@ -148,6 +148,7 @@
 
 
     export default {
+
         components: {
             Swiper,
             SwiperSlide,

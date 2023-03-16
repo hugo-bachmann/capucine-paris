@@ -11,6 +11,7 @@
     "nuxt": "^3.2.3"
   },
   "dependencies": {
+    "@openafg/nuxt-fullpage": "^1.0.5",
     "sass": "^1.59.2",
     "swiper": "^9.1.0"
   }
